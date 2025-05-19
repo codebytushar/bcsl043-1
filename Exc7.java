@@ -11,6 +11,34 @@ class Account
          accountNumber = number;
          balance = bal;
    }
+
+   public Account(string n, int a, double b, String add,String t)
+{
+    name=n;
+    accountNumber=a;
+    balance=b;
+    addressString=add;
+    accountType=t;
+}
+
+  public double getBalance(){
+        return balance;
+  }
+
+  public void deposit(double amount){
+        if (amount > 0)
+            balance += amount;
+        else
+            System.out.println("Invalid deposit amount");
+  }
+
+    public void withdraw(double amount){
+            if (amount > 0 && amount <= balance)
+                balance -= amount;
+            else
+                System.out.println("Invalid withdraw amount");
+    }
+
 }
 
 
